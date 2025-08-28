@@ -1,0 +1,16 @@
+{
+  "name": "Zazar - Квента персонажа",
+  "short_name": "Zazar",
+  "description": "Квента персонажа Zazar: биография, черты, навыки и история",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0f14",
+  "theme_color": "#7c5cff",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
