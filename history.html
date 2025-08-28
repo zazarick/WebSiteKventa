@@ -5,7 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>История Zazar — Квента</title>
 <meta name="description" content="История персонажа Zazar: начало пути, переломные моменты и мотивация.">
+<meta property="og:title" content="История Zazar — Квента">
+<meta property="og:description" content="История персонажа Zazar: начало пути, переломные моменты и мотивация.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourusername.github.io/КВЕНТАЗИТ/history.html">
+<meta property="og:image" content="https://masterpiecer-images.s3.yandex.net/17c6a08f7e1c11ee964fbeb332dff282:upscaled">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="История Zazar — Квента">
+<meta name="twitter:description" content="История персонажа Zazar: начало пути, переломные моменты и мотивация.">
+<meta name="twitter:image" content="https://masterpiecer-images.s3.yandex.net/17c6a08f7e1c11ee964fbeb332dff282:upscaled">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
 <link rel="preload" href="assets/styles.css" as="style">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -280,9 +293,11 @@
     const icon = document.getElementById('expandIcon');
     
     if (content.classList.contains('expanded')) {
+      content.style.maxHeight = null;
       content.classList.remove('expanded');
       icon.classList.remove('expanded');
     } else {
+      content.style.maxHeight = content.scrollHeight + 'px';
       content.classList.add('expanded');
       icon.classList.add('expanded');
     }
