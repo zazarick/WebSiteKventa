@@ -88,6 +88,58 @@ blockquote{margin:16px 0;padding:12px 16px;border-left:3px solid var(--brand);ba
 .site-footer a{color:var(--muted)}
 .site-footer a:hover{color:#fff}
 
+/* Expandable Chapter */
+.expandable-chapter {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin: 20px 0;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.chapter-header {
+  background: linear-gradient(135deg, rgba(124,92,255,.1), rgba(0,209,178,.1));
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.chapter-header:hover {
+  background: linear-gradient(135deg, rgba(124,92,255,.15), rgba(0,209,178,.15));
+}
+
+.chapter-header h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 24px;
+}
+
+.expand-icon {
+  font-size: 24px;
+  color: var(--brand);
+  transition: transform 0.3s ease;
+}
+
+.expand-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.chapter-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  padding: 0 20px;
+}
+
+.chapter-content.expanded {
+  max-height: 2000px;
+  padding: 20px;
+}
+
 /* Responsive */
 @media (max-width: 900px){
   .hero-inner{grid-template-columns:1fr}

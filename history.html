@@ -31,9 +31,15 @@
   <section class="section">
     <div class="container prose">
       <h1>Путь Zazar</h1>
-      <p class="lead">Внешнее Кольцо. От двора Татуина — к клятве Империи Ситхов.</p>
+      <p class="lead">От обычного мальчика с Татуина до адепта Ордена Ситхов</p>
 
-      <div class="timeline">
+      <div class="expandable-chapter">
+        <div class="chapter-header" onclick="toggleChapter()">
+          <h2>До адепта</h2>
+          <span class="expand-icon" id="expandIcon">▼</span>
+        </div>
+        <div class="chapter-content" id="chapterContent">
+          <div class="timeline">
         <article class="event" id="t-boyhood">
           <h3>Детство: Двор, мастерская и длинные тени</h3>
           <p class="meta">Татуин</p>
@@ -241,7 +247,9 @@
             а применять знания».
           </p>
         </article>
-       </div>
+          </div>
+        </div>
+      </div>
 
       <p class="end">Дальше — тонкая работа. Империи нужны не громкие победы, а правильные исходы.</p>
 
@@ -266,6 +274,19 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+  
+  function toggleChapter() {
+    const content = document.getElementById('chapterContent');
+    const icon = document.getElementById('expandIcon');
+    
+    if (content.classList.contains('expanded')) {
+      content.classList.remove('expanded');
+      icon.classList.remove('expanded');
+    } else {
+      content.classList.add('expanded');
+      icon.classList.add('expanded');
+    }
+  }
 </script>
 </body>
 </html>
