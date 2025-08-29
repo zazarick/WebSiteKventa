@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Взаимоотношения — Zazar Welick</title>
+<meta name="description" content="Раздел взаимоотношений персонажа Zazar.">
+<meta property="og:title" content="Взаимоотношения — Zazar">
+<meta property="og:description" content="Раздел взаимоотношений персонажа Zazar.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourusername.github.io/КВЕНТАЗИТ/relationships.html">
+<meta property="og:image" content="https://masterpiecer-images.s3.yandex.net/17c6a08f7e1c11ee964fbeb332dff282:upscaled">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Взаимоотношения — Zazar">
+<meta name="twitter:description" content="Раздел взаимоотношений персонажа Zazar.">
+<meta name="twitter:image" content="https://masterpiecer-images.s3.yandex.net/17c6a08f7e1c11ee964fbeb332dff282:upscaled">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d0f14'/><polygon points='16,4 19,12 27,12 21,18 23,26 16,22 9,26 11,18 5,12 13,12' fill='%23ff0000'/><rect x='2' y='2' width='28' height='28' fill='none' stroke='%237c5cff' stroke-width='2'/></svg>">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="alternate icon" href="assets/favicon.svg">
+<link rel="manifest" href="assets/site.webmanifest">
+<link rel="preload" href="assets/styles.css" as="style">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">◆</span>
+      <span class="brand-name">Квента</span>
+    </div>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul>
+        <li class="nav-center">
+          <a href="living-room.html">Главная</a>
+        </li>
+        <li class="dropdown-menu">
+          <a href="#" class="dropdown-toggle">Zazar Welick</a>
+          <div class="dropdown-content">
+            <a href="index.html" class="dropdown-item">Биография</a>
+            <a href="history.html" class="dropdown-item">История</a>
+            <a href="relationships.html" class="dropdown-item active">Взаимоотношения</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1 class="main-title">Взаимоотношения</h1>
+        <h2 class="title">Zazar</h2>
+        <p class="subtitle"> </p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sigil" title="Знак Зазара"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="relationships">
+    <div class="expandable-chapter red">
+      <div class="chapter-header red" onclick="toggleRelations()">
+        <h2>Sith</h2>
+        <span class="expand-icon" id="relExpandIcon">▼</span>
+      </div>
+      <div class="chapter-content" id="relContent">
+        <div>
+          <div class="container">
+            <div class="relations-grid">
+              <figure class="relation-card">
+                <a href="https://sites.google.com/view/history-cristal/главная-страница" target="_blank" rel="noopener">
+                  <div class="image-wrap">
+                    <img src="https://lh6.googleusercontent.com/i5_EmvyOBk4C9NjxnZKdl4bMZn2xvLAkwouyjeIKNA57MxyZgv48j_4V6vhYPgT_ngR-JxulFb2A9bmP_j1oRAHkl7HfeyIhr1UotsWJP6DVTFPyjHWvqtME9EOuwi9VFnIoq1RZzE81pG3ES2sI5U2MvPJNV-ZfoSPMxVs6-aI0H8JDZHjjbw=w1280" alt="Cristal Jornald" />
+                  </div>
+                </a>
+                <figcaption class="relation-caption">
+                  <h4>Cristal Jornald</h4>
+                  <p class="mentor-note">Наставник Zazar на момент обучения адептом.</p>
+                  <p>Отношения: «Дружелюбные»</p>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <small>© <span id="year"></span> Zazar. Все права — в нужных руках.</small>
+    <nav aria-label="Нижняя навигация">
+      <a href="index.html#bio">Биография</a>
+      <a href="history.html">История</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Dropdown menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    
+    dropdownToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      dropdownContent.classList.toggle('show');
+    });
+    
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown-menu')) {
+        dropdownContent.classList.remove('show');
+      }
+    });
+  });
+
+  // Защита от инспектирования
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    return false;
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'F12') { e.preventDefault(); return false; }
+    if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); return false; }
+    if (e.ctrlKey && e.shiftKey && e.key === 'J') { e.preventDefault(); return false; }
+    if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+    if (e.ctrlKey && e.shiftKey && e.key === 'C') { e.preventDefault(); return false; }
+  });
+
+  setInterval(function() {
+    if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+      document.body.innerHTML = 'Доступ запрещен';
+    }
+  }, 1000);
+
+  console.log = function() {};
+  console.warn = function() {};
+  console.error = function() {};
+  console.info = function() {};
+
+  // Toggle for relationships expandable
+  function toggleRelations(){
+    const content = document.getElementById('relContent');
+    const icon = document.getElementById('relExpandIcon');
+    const isExpanded = content.classList.contains('expanded');
+    if(isExpanded){
+      content.classList.remove('expanded');
+      icon.classList.remove('expanded');
+    } else {
+      content.classList.add('expanded');
+      icon.classList.add('expanded');
+    }
+  }
+</script>
+</body>
+</html>
+
+

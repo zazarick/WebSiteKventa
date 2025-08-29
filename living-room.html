@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Гостинная — Скрин</title>
+<meta name="description" content="Гостинная: место встреч и скрины.">
+<meta property="og:title" content="Гостинная — Скрин">
+<meta property="og:description" content="Гостинная: место встреч и скрины.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourusername.github.io/КВЕНТАЗИТ/">
+<meta property="og:image" content="https://masterpiecer-images.s3.yandex.net/17c6a08f7e1c11ee964fbeb332dff282:upscaled">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Гостинная — Скрин">
+<meta name="twitter:description" content="Гостинная: место встреч и скрины.">
+<meta name="twitter:image" content="https://masterpiecer-images.s3.yandex.net/17c6a08f7e1c11ee964fbeb332dff282:upscaled">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d0f14'/><polygon points='16,4 19,12 27,12 21,18 23,26 16,22 9,26 11,18 5,12 13,12' fill='%23ff0000'/><rect x='2' y='2' width='28' height='28' fill='none' stroke='%237c5cff' stroke-width='2'/></svg>">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="alternate icon" href="assets/favicon.svg">
+<link rel="manifest" href="assets/site.webmanifest">
+<link rel="preload" href="assets/styles.css" as="style">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">◆</span>
+      <span class="brand-name">Квента</span>
+    </div>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul>
+        <li class="nav-center">
+          <a href="living-room.html">Главная</a>
+        </li>
+        <li class="dropdown-menu">
+          <a href="#" class="dropdown-toggle">Zazar Welick</a>
+          <div class="dropdown-content">
+            <a href="index.html" class="dropdown-item">Биография</a>
+            <a href="history.html" class="dropdown-item">История</a>
+            <a href="relationships.html" class="dropdown-item">Взаимоотношения</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1 class="main-title">Гостинная</h1>
+        <h2 class="title"> </h2>
+        <p class="subtitle">Место встреч и общения</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sigil" title="Знак Гостинной"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="screenshot">
+    <div class="container">
+      <h2>Персонажи:</h2>
+      <div class="screenshot-card">
+        <h3> </h3>
+        <div class="screenshot-frame">
+          <a href="index.html" title="Перейти на Zazar Welick — Главная">
+            <img src="https://masterpiecer-images.s3.yandex.net/17c6a08f7e1c11ee964fbeb332dff282:upscaled" alt="Гостинная" />
+          </a>
+          <div class="screenshot-info">
+            <h4>Zazar Welick</h4>
+            <p class="screenshot-title">Sith</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <small>© <span id="year"></span> Zazar. Все права — в нужных руках.</small>
+    <nav aria-label="Нижняя навигация">
+      <a href="index.html#chapter">Глава</a>
+      <a href="index.html#bio">Биография</a>
+      <a href="index.html#traits">Черты</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Music controls UI -->
+<div id="music-controls" style="position:fixed;right:16px;bottom:16px;z-index:10000">
+  <button id="music-edit-btn" style="padding:10px 14px;border-radius:10px;border:1px solid #23293a;background:rgba(124,92,255,.15);color:#e6e9ef;cursor:pointer">Редакт музыки</button>
+  <div id="music-panel" style="display:none;position:absolute;right:0;bottom:50px;width:260px;padding:14px;border-radius:12px;border:1px solid #23293a;background:rgba(13,15,20,.95);box-shadow:0 8px 24px rgba(0,0,0,.4)">
+    <div style="margin-bottom:10px;color:#e6e9ef;font-weight:600">Музыка: Главная</div>
+    <label style="display:block;color:#9aa3b2;margin-bottom:6px">Громкость: <span id="music-vol-val">0.02</span></label>
+    <input id="music-volume" type="range" min="0" max="1" step="0.01" value="0.02" style="width:100%">
+    <label style="display:flex;align-items:center;gap:8px;margin-top:10px;color:#9aa3b2">
+      <input id="music-muted" type="checkbox"> Выключить звук
+    </label>
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+      <button id="music-cancel" style="padding:8px 10px;border-radius:8px;border:1px solid #23293a;background:transparent;color:#e6e9ef;cursor:pointer">Отмена</button>
+      <button id="music-save" style="padding:8px 10px;border-radius:8px;border:1px solid transparent;background:linear-gradient(135deg,#7c5cff,#00d1b2);color:#0b0e13;cursor:pointer;font-weight:600">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  
+  // Dropdown menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    
+    // Toggle dropdown on click (for mobile)
+    dropdownToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      dropdownContent.classList.toggle('show');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown-menu')) {
+        dropdownContent.classList.remove('show');
+      }
+    });
+  });
+  
+  // Защита от инспектирования
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    return false;
+  });
+  
+  document.addEventListener('keydown', function(e) {
+    // Блокируем F12
+    if (e.key === 'F12') {
+      e.preventDefault();
+      return false;
+    }
+    
+    // Блокируем Ctrl+Shift+I (DevTools)
+    if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+      e.preventDefault();
+      return false;
+    }
+    
+    // Блокируем Ctrl+Shift+J (Console)
+    if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+      e.preventDefault();
+      return false;
+    }
+    
+    // Блокируем Ctrl+U (View Source)
+    if (e.ctrlKey && e.key === 'u') {
+      e.preventDefault();
+      return false;
+    }
+    
+    // Блокируем Ctrl+Shift+C (Element Inspector)
+    if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  // Дополнительная защита
+  setInterval(function() {
+    if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+      document.body.innerHTML = 'Доступ запрещен';
+    }
+  }, 1000);
+  
+  // Блокируем консоль
+  console.log = function() {};
+  console.warn = function() {};
+  console.error = function() {};
+  console.info = function() {};
+
+  // Background music for Главная (Гостинная) — plays only on this page
+  (function(){
+    const audio = document.createElement('audio');
+    const src = 'Music/John_Towner_Williams_-_Finale_67864931.mp3';
+    audio.src = encodeURI(src);
+    audio.loop = true;
+    audio.preload = 'auto';
+    audio.autoplay = true;
+    audio.playsInline = true;
+    audio.volume = 0.02; // очень тихо
+    audio.muted = false; // пробуем сразу со звуком
+    audio.setAttribute('aria-hidden','true');
+    audio.style.display = 'none';
+    document.body.appendChild(audio);
+    window.pageAudio = audio; // дать доступ панели управления
+
+    function tryPlay(){
+      audio.play().catch(function(){
+        audio.muted = true; // если блокировка — запустим без звука
+        audio.play().catch(function(){});
+        showEnableButton();
+      });
+    }
+
+    if (document.readyState !== 'loading') tryPlay();
+    document.addEventListener('DOMContentLoaded', tryPlay);
+    window.addEventListener('load', tryPlay);
+    window.addEventListener('pageshow', tryPlay);
+    document.addEventListener('visibilitychange', function(){ if(!document.hidden) tryPlay(); });
+    [250, 1000, 2000].forEach(function(t){ setTimeout(tryPlay, t); });
+
+    function enableSoundOnce(){
+      audio.muted = false;
+      audio.volume = 0.02;
+      tryPlay();
+      window.removeEventListener('click', enableSoundOnce);
+      window.removeEventListener('keydown', enableSoundOnce);
+      window.removeEventListener('touchstart', enableSoundOnce);
+      const btn = document.getElementById('enable-audio-btn');
+      if(btn){ btn.remove(); }
+    }
+
+    window.addEventListener('click', enableSoundOnce, { once: true });
+    window.addEventListener('keydown', enableSoundOnce, { once: true });
+    window.addEventListener('touchstart', enableSoundOnce, { once: true });
+
+    function showEnableButton(){
+      if(document.getElementById('enable-audio-btn')) return;
+      const btn = document.createElement('button');
+      btn.id = 'enable-audio-btn';
+      btn.textContent = 'Включить звук';
+      btn.style.position = 'fixed';
+      btn.style.right = '16px';
+      btn.style.bottom = '16px';
+      btn.style.zIndex = '10000';
+      btn.style.padding = '10px 14px';
+      btn.style.borderRadius = '10px';
+      btn.style.border = '1px solid #23293a';
+      btn.style.background = 'rgba(124,92,255,.15)';
+      btn.style.color = '#e6e9ef';
+      btn.style.cursor = 'pointer';
+      btn.onclick = enableSoundOnce;
+      document.body.appendChild(btn);
+    }
+  })();
+
+  // Music controls behavior
+  (function(){
+    const btn = document.getElementById('music-edit-btn');
+    const panel = document.getElementById('music-panel');
+    const vol = document.getElementById('music-volume');
+    const volVal = document.getElementById('music-vol-val');
+    const muted = document.getElementById('music-muted');
+    const save = document.getElementById('music-save');
+    const cancel = document.getElementById('music-cancel');
+
+    function openPanel(){
+      if(!window.pageAudio){ return; }
+      vol.value = (window.pageAudio.volume || 0).toFixed(2);
+      volVal.textContent = vol.value;
+      muted.checked = !!window.pageAudio.muted;
+      panel.style.display = 'block';
+    }
+    function closePanel(){ panel.style.display = 'none'; }
+    vol.addEventListener('input', function(){ volVal.textContent = this.value; });
+    save.addEventListener('click', function(){
+      if(window.pageAudio){
+        window.pageAudio.volume = parseFloat(vol.value);
+        window.pageAudio.muted = !!muted.checked;
+        if(!window.pageAudio.paused){ window.pageAudio.play().catch(function(){}); }
+      }
+      closePanel();
+    });
+    cancel.addEventListener('click', closePanel);
+    btn.addEventListener('click', function(){ panel.style.display = panel.style.display==='block' ? 'none':'block'; if(panel.style.display==='block') openPanel(); });
+    document.addEventListener('click', function(e){ if(!e.target.closest('#music-controls')) closePanel(); });
+  })();
+</script>
+</body>
+</html>

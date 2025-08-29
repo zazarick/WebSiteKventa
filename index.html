@@ -29,12 +29,21 @@
   <div class="container header-inner">
     <div class="brand">
       <span class="brand-mark" aria-hidden="true">◆</span>
-      <a href="index.html" class="brand-name">Zazar</a>
+      <span class="brand-name">Квента</span>
     </div>
     <nav class="site-nav" aria-label="Основная навигация">
       <ul>
-        <li><a href="index.html" aria-current="page">Главная</a></li>
-        <li><a href="history.html">История</a></li>
+        <li class="nav-center">
+          <a href="living-room.html">Главная</a>
+        </li>
+        <li class="dropdown-menu">
+          <a href="#" class="dropdown-toggle">Zazar Welick</a>
+          <div class="dropdown-content">
+            <a href="index.html" class="dropdown-item">Биография</a>
+            <a href="history.html" class="dropdown-item">История</a>
+            <a href="relationships.html" class="dropdown-item">Взаимоотношения</a>
+          </div>
+        </li>
       </ul>
     </nav>
   </div>
@@ -45,7 +54,7 @@
     <div class="container hero-inner">
       <div class="hero-text">
         <h1 class="main-title">Биография</h1>
-        <h2 class="title">Zazar</h2>
+        <h2 class="title">Zazar Welick</h2>
         <p class="subtitle">Адепт Ситхов. Проводник через тьму к власти.</p>
         <div class="cta-row">
           <a class="button primary" href="history.html">Читать историю</a>
@@ -63,7 +72,7 @@
       <div>
         <h2>Профиль</h2>
         <dl class="kv">
-          <div class="kv-row"><dt>Имя</dt><dd>Zazar</dd></div>
+          <div class="kv-row"><dt>Имя</dt><dd>Zazar Welick</dd></div>
           <div class="kv-row"><dt>Ранг</dt><dd>Адепт | Империя Ситхов</dd></div>
           <div class="kv-row"><dt>Раса</dt><dd>Человек</dd></div>
           <div class="kv-row"><dt>Родная планета</dt><dd>Коррибан</dd></div>
@@ -108,6 +117,12 @@
     </div>
   </section>
 
+
+
+  
+
+
+
   <section class="section" id="appearance">
     <div class="container grid-2">
       <article class="card">
@@ -148,6 +163,24 @@
   </div>
 </footer>
 
+<!-- Music controls UI -->
+<div id="music-controls" style="position:fixed;right:16px;bottom:16px;z-index:10000">
+  <button id="music-edit-btn" style="padding:10px 14px;border-radius:10px;border:1px solid #23293a;background:rgba(124,92,255,.15);color:#e6e9ef;cursor:pointer">Редакт музыки</button>
+  <div id="music-panel" style="display:none;position:absolute;right:0;bottom:50px;width:260px;padding:14px;border-radius:12px;border:1px solid #23293a;background:rgba(13,15,20,.95);box-shadow:0 8px 24px rgba(0,0,0,.4)">
+    <div style="margin-bottom:10px;color:#e6e9ef;font-weight:600">Музыка: Биография</div>
+    <label style="display:block;color:#9aa3b2;margin-bottom:6px">Громкость: <span id="music-vol-val">0.02</span></label>
+    <input id="music-volume" type="range" min="0" max="1" step="0.01" value="0.02" style="width:100%">
+    <label style="display:flex;align-items:center;gap:8px;margin-top:10px;color:#9aa3b2">
+      <input id="music-muted" type="checkbox"> Выключить звук
+    </label>
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+      <button id="music-cancel" style="padding:8px 10px;border-radius:8px;border:1px solid #23293a;background:transparent;color:#e6e9ef;cursor:pointer">Отмена</button>
+      <button id="music-save" style="padding:8px 10px;border-radius:8px;border:1px solid transparent;background:linear-gradient(135deg,#7c5cff,#00d1b2);color:#0b0e13;cursor:pointer;font-weight:600">Save</button>
+    </div>
+  </div>
+  
+</div>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
   
@@ -158,7 +191,6 @@
   });
   
   document.addEventListener('keydown', function(e) {
-    // Блокируем F12
     if (e.key === 'F12') {
       e.preventDefault();
       return false;
@@ -201,6 +233,125 @@
   console.warn = function() {};
   console.error = function() {};
   console.info = function() {};
+
+  // Dropdown menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    
+    // Toggle dropdown on click (for mobile)
+    dropdownToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      dropdownContent.classList.toggle('show');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown-menu')) {
+        dropdownContent.classList.remove('show');
+      }
+    });
+  });
+  
+  // Background music (robust autoplay for this page only)
+  (function(){
+    const audio = document.createElement('audio');
+    audio.src = 'Music/Star_Wars_-_imperskijj_marsh_62710962.mp3';
+    audio.loop = true;
+    audio.preload = 'auto';
+    audio.autoplay = true;
+    audio.playsInline = true;
+    audio.volume = 0.02; // ещё тише
+    audio.muted = false; // пробуем сразу со звуком
+    audio.setAttribute('aria-hidden','true');
+    audio.style.display = 'none';
+    document.body.appendChild(audio);
+    window.pageAudio = audio; // доступ для UI
+
+    function tryPlay(){
+      audio.play().catch(function(){
+        // если заблокировано — запускаем без звука и покажем кнопку «Включить звук»
+        audio.muted = true;
+        audio.play().catch(function(){});
+        showEnableButton();
+      });
+    }
+
+    // Серия попыток автозапуска в разных фазах загрузки/видимости
+    if (document.readyState !== 'loading') tryPlay();
+    document.addEventListener('DOMContentLoaded', tryPlay);
+    window.addEventListener('load', tryPlay);
+    window.addEventListener('pageshow', tryPlay);
+    document.addEventListener('visibilitychange', function(){ if(!document.hidden) tryPlay(); });
+    // Несколько отложенных попыток — некоторые браузеры разрешают позже
+    [250, 1000, 2000].forEach(function(t){ setTimeout(tryPlay, t); });
+
+    function enableSoundOnce(){
+      audio.muted = false;
+      audio.volume = 0.07;
+      tryPlay();
+      window.removeEventListener('click', enableSoundOnce);
+      window.removeEventListener('keydown', enableSoundOnce);
+      window.removeEventListener('touchstart', enableSoundOnce);
+      const btn = document.getElementById('enable-audio-btn');
+      if(btn){ btn.remove(); }
+    }
+    // Включаем звук при первом взаимодействии пользователя
+    window.addEventListener('click', enableSoundOnce, { once: true });
+    window.addEventListener('keydown', enableSoundOnce, { once: true });
+    window.addEventListener('touchstart', enableSoundOnce, { once: true });
+
+    function showEnableButton(){
+      if(document.getElementById('enable-audio-btn')) return;
+      const btn = document.createElement('button');
+      btn.id = 'enable-audio-btn';
+      btn.textContent = 'Включить звук';
+      btn.style.position = 'fixed';
+      btn.style.right = '16px';
+      btn.style.bottom = '16px';
+      btn.style.zIndex = '10000';
+      btn.style.padding = '10px 14px';
+      btn.style.borderRadius = '10px';
+      btn.style.border = '1px solid #23293a';
+      btn.style.background = 'rgba(124,92,255,.15)';
+      btn.style.color = '#e6e9ef';
+      btn.style.cursor = 'pointer';
+      btn.onclick = enableSoundOnce;
+      document.body.appendChild(btn);
+    }
+  })();
+
+  // Music controls behavior
+  (function(){
+    const btn = document.getElementById('music-edit-btn');
+    const panel = document.getElementById('music-panel');
+    const vol = document.getElementById('music-volume');
+    const volVal = document.getElementById('music-vol-val');
+    const muted = document.getElementById('music-muted');
+    const save = document.getElementById('music-save');
+    const cancel = document.getElementById('music-cancel');
+
+    function openPanel(){
+      if(!window.pageAudio){ return; }
+      vol.value = window.pageAudio.volume.toFixed(2);
+      volVal.textContent = vol.value;
+      muted.checked = !!window.pageAudio.muted;
+      panel.style.display = 'block';
+    }
+    function closePanel(){ panel.style.display = 'none'; }
+    vol.addEventListener('input', function(){ volVal.textContent = this.value; });
+    save.addEventListener('click', function(){
+      if(window.pageAudio){
+        window.pageAudio.volume = parseFloat(vol.value);
+        window.pageAudio.muted = !!muted.checked;
+        if(!window.pageAudio.paused){ window.pageAudio.play().catch(function(){}); }
+      }
+      closePanel();
+    });
+    cancel.addEventListener('click', closePanel);
+    btn.addEventListener('click', function(){ panel.style.display = panel.style.display==='block' ? 'none':'block'; });
+    document.addEventListener('click', function(e){ if(!e.target.closest('#music-controls')) closePanel(); });
+  })();
 </script>
 </body>
 </html>
