@@ -44,6 +44,13 @@
             <a href="relationships.html" class="dropdown-item">Взаимоотношения</a>
           </div>
         </li>
+        <li class="dropdown-menu">
+          <a href="#" class="dropdown-toggle">R8-B2</a>
+          <div class="dropdown-content">
+            <a href="r8-b2-bio.html" class="dropdown-item">Биография</a>
+            <a href="r8-b2-history.html" class="dropdown-item">История</a>
+          </div>
+        </li>
       </ul>
     </nav>
   </div>
@@ -182,10 +189,19 @@
   document.getElementById('year').textContent = new Date().getFullYear();
   // Dropdown menu functionality
   document.addEventListener('DOMContentLoaded', function() {
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
-    const dropdownContent = document.querySelector('.dropdown-content');
-    dropdownToggle.addEventListener('click', function(e) { e.preventDefault(); dropdownContent.classList.toggle('show'); });
-    document.addEventListener('click', function(e) { if (!e.target.closest('.dropdown-menu')) { dropdownContent.classList.remove('show'); } });
+    const menus = document.querySelectorAll('.dropdown-menu');
+    menus.forEach(function(menu){
+      const toggle = menu.querySelector('.dropdown-toggle');
+      const content = menu.querySelector('.dropdown-content');
+      if(toggle && content){
+        toggle.addEventListener('click', function(e){
+          e.preventDefault();
+          document.querySelectorAll('.dropdown-content.show').forEach(function(other){ if(other!==content){ other.classList.remove('show'); }});
+          content.classList.toggle('show');
+        });
+      }
+    });
+    document.addEventListener('click', function(e){ if(!e.target.closest('.dropdown-menu')){ document.querySelectorAll('.dropdown-content.show').forEach(function(dc){ dc.classList.remove('show'); }); } });
   });
 
   // Background music for Биография — plays only on this page
