@@ -22,23 +22,6 @@
 <link rel="preload" href="assets/styles.css" as="style">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
-<script>
-  // Redirect first-time/external visits to Главная (living-room.html)
-  (function(){
-    try {
-      var ref = document.referrer;
-      var sameOrigin = false;
-      if (ref) {
-        var refOrigin = new URL(ref).origin;
-        sameOrigin = refOrigin === window.location.origin;
-      }
-      // If user came from outside the site (or opened directly), redirect to Главная
-      if (!sameOrigin) {
-        window.location.replace('living-room.html');
-      }
-    } catch(e) {}
-  })();
-</script>
 <body>
 <a class="skip-link" href="#main">Перейти к содержимому</a>
 
@@ -87,7 +70,7 @@
         <h3> </h3>
         <div class="screenshot-frame">
           <a href="bio.html" title="Перейти на Zazar Welick — Биография">
-            <img src="https://masterpiecer-images.s3.yandex.net/17c6a08f7e1c11ee964fbeb332dff282:upscaled" alt="Гостинная" />
+            <img src="https://masterpiecer-images.s3.yandex.net/17c6a08f7e1c11ee964fbeb332dff282:upscaled" alt="Главная" />
           </a>
           <div class="screenshot-info">
             <h4>Zazar Welick</h4>
