@@ -207,7 +207,7 @@
   // Background music for Биография — plays only on this page
   (function(){
     const audio = document.createElement('audio');
-    audio.src = encodeURI('Music/Star_Wars_-_imperskijj_marsh_62710962.mp3');
+    audio.src = encodeURI('music/Star_Wars_-_imperskijj_marsh_62710962.mp3');
     audio.loop = true;
     audio.preload = 'auto';
     audio.autoplay = true;
@@ -263,6 +263,10 @@
       btn.style.color = '#e6e9ef';
       btn.style.cursor = 'pointer';
       btn.style.whiteSpace = 'nowrap';
+      btn.style.fontFamily = 'system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif';
+      btn.style.fontWeight = '600';
+      btn.style.letterSpacing = '0.3px';
+      btn.style.textShadow = 'none';
       btn.onclick = enableSoundOnce;
       document.body.appendChild(btn);
     }

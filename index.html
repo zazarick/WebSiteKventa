@@ -214,7 +214,7 @@
   // Background music (robust autoplay for this page only)
   (function(){
     const audio = document.createElement('audio');
-    audio.src = encodeURI('Music/John_Towner_Williams_-_Finale_67864931.mp3');
+    audio.src = encodeURI('music/John_Towner_Williams_-_Finale_67864931.mp3');
     audio.loop = true;
     audio.preload = 'auto';
     audio.autoplay = true;
@@ -275,6 +275,10 @@
       btn.style.color = '#e6e9ef';
       btn.style.cursor = 'pointer';
       btn.style.whiteSpace = 'nowrap';
+      btn.style.fontFamily = 'system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif';
+      btn.style.fontWeight = '600';
+      btn.style.letterSpacing = '0.3px';
+      btn.style.textShadow = 'none';
       btn.onclick = enableSoundOnce;
       document.body.appendChild(btn);
     }
