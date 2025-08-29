@@ -90,6 +90,33 @@
         </div>
       </div>
     </div>
+    
+    <div class="expandable-chapter yellow">
+      <div class="chapter-header yellow" onclick="toggleMando()">
+        <h2>Mando</h2>
+        <span class="expand-icon" id="mandoExpandIcon">▼</span>
+      </div>
+      <div class="chapter-content" id="mandoContent">
+        <div>
+          <div class="container">
+            <div class="relations-grid">
+              <figure class="relation-card">
+                <a href="#" onclick="return false">
+                  <div class="image-wrap">
+                    <img src="https://avatars.mds.yandex.net/i?id=2beff58f8fdf78f0cbe2c693f88bcf781e59d2fa-5272510-images-thumbs&n=13" alt="Aurora Goa`r" />
+                  </div>
+                </a>
+                <figcaption class="relation-caption">
+                  <h4>Aurora Goa`r</h4>
+                  <p class="mentor-note" style="color:#ffd85e">Первый мандолорец, с которым встретился Zazar, так ещё и женского пола.</p>
+                  <p>Отношения: «Нейтральные»</p>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
 
@@ -152,6 +179,20 @@
   function toggleRelations(){
     const content = document.getElementById('relContent');
     const icon = document.getElementById('relExpandIcon');
+    const isExpanded = content.classList.contains('expanded');
+    if(isExpanded){
+      content.classList.remove('expanded');
+      icon.classList.remove('expanded');
+    } else {
+      content.classList.add('expanded');
+      icon.classList.add('expanded');
+    }
+  }
+
+  // Toggle for Mando expandable
+  function toggleMando(){
+    const content = document.getElementById('mandoContent');
+    const icon = document.getElementById('mandoExpandIcon');
     const isExpanded = content.classList.contains('expanded');
     if(isExpanded){
       content.classList.remove('expanded');
