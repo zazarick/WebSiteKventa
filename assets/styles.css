@@ -13,9 +13,7 @@ img{max-width:100%;display:block}
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 .skip-link:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;background:#000;color:#fff;padding:8px 12px;border-radius:6px}
 
-/* Page entry animation */
-html:not(.page-loaded) body{opacity:0;transform:translateY(12px)}
-body{transition:opacity .6s ease, transform .6s ease}
+/* Page entry animation removed by request */
 
 /* Header */
 .site-header{position:sticky;top:0;background:rgba(13,15,20,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:10}
