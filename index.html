@@ -164,18 +164,7 @@
     }
   });
   
-  // Дополнительная защита
-  setInterval(function() {
-    if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
-      document.body.innerHTML = 'Доступ запрещен';
-    }
-  }, 1000);
-  
-  // Блокируем консоль
-  console.log = function() {};
-  console.warn = function() {};
-  console.error = function() {};
-  console.info = function() {};
+  // Отключено: жёсткая защита, мешавшая открытию страниц в некоторых браузерах
 
   // Dropdown menu functionality
   document.addEventListener('DOMContentLoaded', function() {
