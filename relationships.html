@@ -177,10 +177,25 @@
     }
   }, 1000);
 
+  // Дополнительная защита от DevTools
+  setInterval(function() {
+    const devtools = /./;
+    devtools.toString = function() {
+      this.opened = true;
+    }
+    console.log('%c', devtools);
+    if (devtools.opened) {
+      document.body.innerHTML = 'Доступ запрещен';
+    }
+  }, 1000);
+
+  // Блокируем console методы
   console.log = function() {};
   console.warn = function() {};
   console.error = function() {};
   console.info = function() {};
+  console.debug = function() {};
+  console.trace = function() {};
 
   // Toggle for relationships expandable
   function toggleRelations(){
