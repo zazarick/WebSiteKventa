@@ -593,6 +593,7 @@ blockquote{margin:16px 0;padding:12px 16px;border-left:3px solid var(--brand);ba
   border-radius: 12px;
   margin-bottom: 16px;
   box-shadow: 0 4px 16px rgba(0,0,0,.4);
+  object-fit: contain;
 }
 
 .screenshot-info h4 {
@@ -624,7 +625,7 @@ blockquote{margin:16px 0;padding:12px 16px;border-left:3px solid var(--brand);ba
 .characters-grid{align-items:stretch}
 .characters-grid .screenshot-card{display:flex;flex-direction:column}
 .characters-grid .screenshot-frame{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;height:520px;max-width:360px}
-.characters-grid .screenshot-frame img{width:300px;height:300px;object-fit:cover}
+.characters-grid .screenshot-frame img{width:300px;height:300px;object-fit:contain}
 
 /* Relationships grid */
 .relations-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,360px));gap:24px;align-items:start;justify-content:center}
@@ -632,7 +633,7 @@ blockquote{margin:16px 0;padding:12px 16px;border-left:3px solid var(--brand);ba
 .relation-card:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(255,0,0,.2)}
 .relation-card a{display:block}
 .relation-card .image-wrap{aspect-ratio:3/4;overflow:hidden;background:#0b0e13}
-.relation-card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05);object-position:center 40%}
+.relation-card img{width:100%;height:100%;object-fit:contain;display:block;filter:saturate(1.05);object-position:center 40%}
 .relation-caption{padding:16px 18px;text-align:center;border-top:1px solid rgba(255,0,0,.25);background:rgba(0,0,0,.25)}
 .relation-caption h4{margin:0 0 6px 0;font-size:18px;color:#ffffff}
 .relation-caption p{margin:0;color:#ff8b8b}
