@@ -176,7 +176,7 @@
     <label style="display:block;color:#9aa3b2;margin-bottom:6px">Громкость: <span id="music-vol-val">0.02</span></label>
     <input id="music-volume" type="range" min="0" max="1" step="0.01" value="0.02" style="width:100%">
     <label style="display:flex;align-items:center;gap:8px;margin-top:10px;color:#9aa3b2">
-      <input id="music-muted" type="checkbox"> Выключить звук
+      <input id="music-muted" type="checkbox"> Включить
     </label>
     <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
       <button id="music-cancel" style="padding:8px 10px;border-radius:8px;border:1px solid #23293a;background:transparent;color:#e6e9ef;cursor:pointer">Отмена</button>
@@ -247,10 +247,10 @@
     audio.src = encodeURI('music/Star_Wars_-_imperskijj_marsh_62710962.mp3');
     audio.loop = true;
     audio.preload = 'auto';
-    audio.autoplay = true;
+    audio.autoplay = false;
     audio.playsInline = true;
     audio.volume = 0.02;
-    audio.muted = false;
+    audio.muted = true;
     audio.setAttribute('aria-hidden','true');
     audio.style.display = 'none';
     document.body.appendChild(audio);
@@ -263,12 +263,8 @@
         showEnableButton();
       });
     }
-    if (document.readyState !== 'loading') tryPlay();
-    document.addEventListener('DOMContentLoaded', tryPlay);
-    window.addEventListener('load', tryPlay);
-    window.addEventListener('pageshow', tryPlay);
-    document.addEventListener('visibilitychange', function(){ if(!document.hidden) tryPlay(); });
-    [250, 1000, 2000].forEach(function(t){ setTimeout(tryPlay, t); });
+    // Музыка не воспроизводится автоматически
+    // Пользователь должен сам включить её через панель управления
 
     function enableSoundOnce(){
       audio.muted = false;
@@ -280,9 +276,7 @@
       const btn = document.getElementById('enable-audio-btn');
       if(btn){ btn.remove(); }
     }
-    window.addEventListener('click', enableSoundOnce, { once: true });
-    window.addEventListener('keydown', enableSoundOnce, { once: true });
-    window.addEventListener('touchstart', enableSoundOnce, { once: true });
+    // Звук включается только через панель управления
 
     function showEnableButton(){
       if(document.getElementById('enable-audio-btn')) return;
@@ -343,7 +337,7 @@
       if(!window.pageAudio){ return; }
       vol.value = (window.pageAudio.volume || 0).toFixed(2);
       volVal.textContent = vol.value;
-      muted.checked = !!window.pageAudio.muted;
+      muted.checked = !window.pageAudio.muted; // Инвертируем логику для "Включить"
       panel.style.display = 'block';
     }
     function closePanel(){ panel.style.display = 'none'; }
@@ -351,7 +345,7 @@
     save.addEventListener('click', function(){
       if(window.pageAudio){
         window.pageAudio.volume = parseFloat(vol.value);
-        window.pageAudio.muted = !!muted.checked;
+        window.pageAudio.muted = !muted.checked; // Инвертируем логику для "Включить"
         if(!window.pageAudio.paused){ window.pageAudio.play().catch(function(){}); }
       }
       closePanel();
