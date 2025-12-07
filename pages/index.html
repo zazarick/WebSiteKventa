@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Главная страница</title>
+<meta name="description" content="Гостинная: место встреч и скрины.">
+<meta property="og:title" content="Zazar — Квента персонажа">
+<meta property="og:description" content="Квента персонажа Zazar: биография, черты, навыки, история и галерея.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourusername.github.io/КВЕНТАЗИТ/">
+    <meta property="og:image" content="Image/Sith.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zazar — Квента персонажа">
+<meta name="twitter:description" content="Квента персонажа Zazar: биография, черты, навыки, история и галерея.">
+    <meta name="twitter:image" content="Image/Sith.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d0f14'/><polygon points='16,4 19,12 27,12 21,18 23,26 16,22 9,26 11,18 5,12 13,12' fill='%23ff0000'/><rect x='2' y='2' width='28' height='28' fill='none' stroke='%237c5cff' stroke-width='2'/></svg>">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+<link rel="alternate icon" href="../assets/favicon.svg">
+<link rel="manifest" href="../assets/site.webmanifest">
+<link rel="preload" href="../assets/styles.css" as="style">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">◆</span>
+      <span class="brand-name">Квента</span>
+    </div>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul>
+        <li class="nav-center">
+          <a href="index.html">Главная</a>
+        </li>
+        <li class="dropdown-menu">
+          <a href="#" class="dropdown-toggle">Zazar Welick</a>
+          <div class="dropdown-content">
+            <a href="bio.html" class="dropdown-item">Биография</a>
+            <a href="history.html" class="dropdown-item">История</a>
+            <a href="relationships.html" class="dropdown-item">Взаимоотношения</a>
+          </div>
+        </li>
+        <li class="dropdown-menu">
+          <a href="#" class="dropdown-toggle">R8-B2</a>
+          <div class="dropdown-content">
+            <a href="r8-b2-bio.html" class="dropdown-item">Биография</a>
+            <a href="r8-b2-history.html" class="dropdown-item">История</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1 class="main-title">Главная</h1>
+        <h2 class="title"> </h2>
+        <p class="subtitle">Место встреч и общения</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sigil" title="Знак Зазара"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="screenshot">
+    <div class="container">
+      <h2>Персонажи:</h2>
+      <div class="characters-grid">
+        <div class="screenshot-card">
+          <h3> </h3>
+          <div class="screenshot-frame">
+            <a href="bio.html" title="Перейти на Zazar Welick — Биография">
+              <img src="../Image/Sith.jpg" alt="Zazar Welick - Ситх" />
+            </a>
+            <div class="screenshot-info">
+              <h4>Zazar Welick</h4>
+              <p class="screenshot-title">Sith</p>
+            </div>
+          </div>
+        </div>
+        <div class="screenshot-card">
+          <h3> </h3>
+          <div class="screenshot-frame green">
+            <a href="r8-b2-bio.html" title="Перейти на R8-B2 — Биография">
+              <img src="https://avatars.mds.yandex.net/i?id=1c7814fef0d0412757bb0a76d6b51499_l-5487857-images-thumbs&n=13" alt="R8-B2" />
+            </a>
+            <div class="screenshot-info">
+              <h4>R8-B2</h4>
+              <p class="screenshot-title green">Дроид</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  
+
+
+
+  
+
+
+
+  <!-- Раздел "Внешность/Характер" удалён по просьбе -->
+
+  
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <small>© <span id="year"></span> Zazar. Все права — в нужных руках.</small>
+    <nav aria-label="Нижняя навигация">
+      <a href="#bio">Биография</a>
+      <a href="#traits">Черты</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Music controls UI -->
+<div id="music-controls" style="position:fixed;right:16px;bottom:16px;z-index:10000">
+  <button id="music-edit-btn" style="padding:10px 14px;border-radius:10px;border:1px solid #23293a;background:rgba(124,92,255,.15);color:#e6e9ef;cursor:pointer">Редакт музыки</button>
+  <div id="music-panel" style="display:none;position:absolute;right:0;bottom:50px;width:260px;padding:14px;border-radius:12px;border:1px solid #23293a;background:rgba(13,15,20,.95);box-shadow:0 8px 24px rgba(0,0,0,.4)">
+    <div style="margin-bottom:10px;color:#e6e9ef;font-weight:600">Музыка: Главная</div>
+    <label style="display:block;color:#9aa3b2;margin-bottom:6px">Громкость: <span id="music-vol-val">0.02</span></label>
+    <input id="music-volume" type="range" min="0" max="1" step="0.01" value="0.02" style="width:100%">
+    <label style="display:flex;align-items:center;gap:8px;margin-top:10px;color:#9aa3b2">
+      <input id="music-muted" type="checkbox"> Включить
+    </label>
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+      <button id="music-cancel" style="padding:8px 10px;border-radius:8px;border:1px solid #23293a;background:transparent;color:#e6e9ef;cursor:pointer">Отмена</button>
+      <button id="music-save" style="padding:8px 10px;border-radius:8px;border:1px solid transparent;background:linear-gradient(135deg,#7c5cff,#00d1b2);color:#0b0e13;cursor:pointer;font-weight:600">Save</button>
+    </div>
+  </div>
+  
+</div>
+
+<script src="../js/common.js"></script>
+<script src="../js/index.js"></script>
+</body>
+</html>

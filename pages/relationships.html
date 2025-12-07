@@ -15,12 +15,12 @@
 <meta name="twitter:description" content="Раздел взаимоотношений персонажа Zazar.">
     <meta name="twitter:image" content="https://cdn.discordapp.com/attachments/1238591727502102569/1411298654026727494/d1c818a4-9103-4ef7-ae07-1f0cfc948145_flow-1756550098728.png?ex=68b425cb&is=68b2d44b&hm=305fb0d9e0d902df260341e242e037c34becca6d4102ef2918aa2be21684a52c&">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d0f14'/><polygon points='16,4 19,12 27,12 21,18 23,26 16,22 9,26 11,18 5,12 13,12' fill='%23ff0000'/><rect x='2' y='2' width='28' height='28' fill='none' stroke='%237c5cff' stroke-width='2'/></svg>">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-<link rel="alternate icon" href="assets/favicon.svg">
-<link rel="manifest" href="assets/site.webmanifest">
-<link rel="preload" href="assets/styles.css" as="style">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+<link rel="alternate icon" href="../assets/favicon.svg">
+<link rel="manifest" href="../assets/site.webmanifest">
+<link rel="preload" href="../assets/styles.css" as="style">
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -137,94 +137,8 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Dropdown menu functionality (multi)
-  document.addEventListener('DOMContentLoaded', function() {
-    const menus = document.querySelectorAll('.dropdown-menu');
-    menus.forEach(function(menu){
-      const toggle = menu.querySelector('.dropdown-toggle');
-      const content = menu.querySelector('.dropdown-content');
-      if(toggle && content){
-        toggle.addEventListener('click', function(e){
-          e.preventDefault();
-          document.querySelectorAll('.dropdown-content.show').forEach(function(other){ if(other!==content){ other.classList.remove('show'); }});
-          content.classList.toggle('show');
-        });
-      }
-    });
-    document.addEventListener('click', function(e){ if(!e.target.closest('.dropdown-menu')){ document.querySelectorAll('.dropdown-content.show').forEach(function(dc){ dc.classList.remove('show'); }); } });
-  });
-
-  // Защита от инспектирования
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    return false;
-  });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'F12') { e.preventDefault(); return false; }
-    if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); return false; }
-    if (e.ctrlKey && e.shiftKey && e.key === 'J') { e.preventDefault(); return false; }
-    if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
-    if (e.ctrlKey && e.shiftKey && e.key === 'C') { e.preventDefault(); return false; }
-  });
-
-  setInterval(function() {
-    if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
-      document.body.innerHTML = 'Доступ запрещен';
-    }
-  }, 1000);
-
-  // Дополнительная защита от DevTools
-  setInterval(function() {
-    const devtools = /./;
-    devtools.toString = function() {
-      this.opened = true;
-    }
-    console.log('%c', devtools);
-    if (devtools.opened) {
-      document.body.innerHTML = 'Доступ запрещен';
-    }
-  }, 1000);
-
-  // Блокируем console методы
-  console.log = function() {};
-  console.warn = function() {};
-  console.error = function() {};
-  console.info = function() {};
-  console.debug = function() {};
-  console.trace = function() {};
-
-  // Toggle for relationships expandable
-  function toggleRelations(){
-    const content = document.getElementById('relContent');
-    const icon = document.getElementById('relExpandIcon');
-    const isExpanded = content.classList.contains('expanded');
-    if(isExpanded){
-      content.classList.remove('expanded');
-      icon.classList.remove('expanded');
-    } else {
-      content.classList.add('expanded');
-      icon.classList.add('expanded');
-    }
-  }
-
-  // Toggle for Mando expandable
-  function toggleMando(){
-    const content = document.getElementById('mandoContent');
-    const icon = document.getElementById('mandoExpandIcon');
-    const isExpanded = content.classList.contains('expanded');
-    if(isExpanded){
-      content.classList.remove('expanded');
-      icon.classList.remove('expanded');
-    } else {
-      content.classList.add('expanded');
-      icon.classList.add('expanded');
-    }
-  }
-</script>
+<script src="../js/common.js"></script>
+<script src="../js/relationships.js"></script>
 </body>
 </html>
 

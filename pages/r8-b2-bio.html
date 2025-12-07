@@ -6,12 +6,12 @@
 <title>R8-B2 — Биография</title>
 <meta name="description" content="Биография R8-B2.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d0f14'/><polygon points='16,4 19,12 27,12 21,18 23,26 16,22 9,26 11,18 5,12 13,12' fill='%2300aa55'/><rect x='2' y='2' width='28' height='28' fill='none' stroke='%237c5cff' stroke-width='2'/></svg>">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-<link rel="alternate icon" href="assets/favicon.svg">
-<link rel="manifest" href="assets/site.webmanifest">
-<link rel="preload" href="assets/styles.css" as="style">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+<link rel="alternate icon" href="../assets/favicon.svg">
+<link rel="manifest" href="../assets/site.webmanifest">
+<link rel="preload" href="../assets/styles.css" as="style">
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -93,82 +93,7 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  
-  // Защита от инспектирования
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    return false;
-  });
-  
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'F12') {
-      e.preventDefault();
-      return false;
-    }
-    
-    // Блокируем Ctrl+Shift+I (DevTools)
-    if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-      e.preventDefault();
-      return false;
-    }
-    
-    // Блокируем Ctrl+Shift+J (Console)
-    if (e.ctrlKey && e.shiftKey && e.key === 'J') {
-      e.preventDefault();
-      return false;
-    }
-    
-    // Блокируем Ctrl+U (View Source)
-    if (e.ctrlKey && e.key === 'u') {
-      e.preventDefault();
-      return false;
-    }
-    
-    // Блокируем Ctrl+Shift+C (Element Inspector)
-    if (e.ctrlKey && e.shiftKey && e.key === 'C') {
-      e.preventDefault();
-      return false;
-    }
-  });
-
-  // Дополнительная защита от DevTools
-  setInterval(function() {
-    const devtools = /./;
-    devtools.toString = function() {
-      this.opened = true;
-    }
-    console.log('%c', devtools);
-    if (devtools.opened) {
-      document.body.innerHTML = 'Доступ запрещен';
-    }
-  }, 1000);
-
-  // Блокируем console методы
-  console.log = function() {};
-  console.warn = function() {};
-  console.error = function() {};
-  console.info = function() {};
-  console.debug = function() {};
-  console.trace = function() {};
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const menus = document.querySelectorAll('.dropdown-menu');
-    menus.forEach(function(menu){
-      const toggle = menu.querySelector('.dropdown-toggle');
-      const content = menu.querySelector('.dropdown-content');
-      if(toggle && content){
-        toggle.addEventListener('click', function(e){
-          e.preventDefault();
-          document.querySelectorAll('.dropdown-content.show').forEach(function(other){ if(other!==content){ other.classList.remove('show'); }});
-          content.classList.toggle('show');
-        });
-      }
-    });
-    document.addEventListener('click', function(e){ if(!e.target.closest('.dropdown-menu')){ document.querySelectorAll('.dropdown-content.show').forEach(function(dc){ dc.classList.remove('show'); }); } });
-  });
-</script>
+<script src="../js/common.js"></script>
 </body>
 </html>
 
