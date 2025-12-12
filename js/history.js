@@ -25,3 +25,16 @@ function toggleSubChapter(header) {
     icon.textContent = '▼';
   }
 }
+
+function toggleDarthChapter() {
+  const content = document.getElementById('darthChapterContent');
+  const icon = document.getElementById('darthExpandIcon');
+  
+  if (content.classList.contains('expanded')) {
+    content.classList.remove('expanded');
+    icon.classList.remove('expanded');
+  } else {
+    content.classList.add('expanded');
+    icon.classList.add('expanded');
+  }
+}
