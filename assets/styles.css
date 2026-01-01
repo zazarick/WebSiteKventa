@@ -617,6 +617,11 @@ blockquote{margin:16px 0;padding:12px 16px;border-left:3px solid var(--brand);ba
 .screenshot-frame.green:hover{box-shadow:0 12px 40px rgba(15,106,47,.35)}
 .screenshot-title.green{color:#2bd46c}
 
+/* Yellow-white variant for Elisabeth */
+.screenshot-frame.yellow-white{border-color:#f5e6a3;box-shadow:0 8px 32px rgba(255,230,150,.25);background:linear-gradient(180deg, rgba(0,0,0,.3), rgba(60,55,30,.25))}
+.screenshot-frame.yellow-white:hover{box-shadow:0 12px 40px rgba(255,230,150,.35)}
+.screenshot-title.yellow-white{color:#f5e6a3}
+
 /* Characters grid on Главная */
 .characters-grid{display:flex;gap:32px;justify-content:center;align-items:flex-start;flex-wrap:wrap}
 .characters-grid .screenshot-card{margin:0}
